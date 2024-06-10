@@ -56,8 +56,8 @@ public class TransactionService {
        ResponseEntity<Map> authorizationResponse = restTemplate.getForEntity("https://util.devi.tools/api/v2/authorize" , Map.class);
 
        if (authorizationResponse.getStatusCode() == HttpStatus.OK ){
-           String message = (String) authorizationResponse.getBody().get("status");
-           return "success".equalsIgnoreCase(message);
+           String message = (String) authorizationResponse.getBody().get("message");
+           return "authorized".equalsIgnoreCase(message);
        }else return false;
     }
 }
