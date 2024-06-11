@@ -1,5 +1,6 @@
 package com.albertocode.PaymentAPI.Services;
 
+import com.albertocode.PaymentAPI.DTOS.UserDTO;
 import com.albertocode.PaymentAPI.Repositories.UserRepository;
 import com.albertocode.PaymentAPI.domain.User.User;
 import com.albertocode.PaymentAPI.domain.User.UserType;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -32,6 +34,17 @@ public class UserService {
     public User findUserById(Long id) throws Exception {
         return this.repository.findUserById(id).orElseThrow(() -> new Exception("User not Found"));
 
+    }
+
+    //method to create user
+    public User createUser(UserDTO data){
+        User newUser = new User(data);
+        this.saveUser(newUser);
+        return newUser;
+    }
+
+    public List<User> getAllUsers(){
+         return this.repository.findAll();
     }
 
     //method to save the User in the database
