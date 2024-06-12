@@ -46,9 +46,6 @@ public class TransactionService {
 
 
 
-
-
-
         this.repository.save(newtransaction);
         this.userService.saveUser(sender);
         this.userService.saveUser(receiver);
