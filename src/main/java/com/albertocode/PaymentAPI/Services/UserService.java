@@ -20,7 +20,7 @@ public class UserService {
     //method to check user and check if there's enough founds for the transaction
     public void validateTransaction(User sender, BigDecimal amount) throws Exception {
 
-        if (sender.getUserType() != UserType.MERCHANT){
+        if (sender.getUserType() == UserType.MERCHANT){
             throw new Exception("User of type lojist not allowed to process the transaction");
         }
 
