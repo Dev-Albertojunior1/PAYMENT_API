@@ -44,8 +44,7 @@ public class TransactionService {
         newtransaction.setReceiver(receiver);
         newtransaction.setTimestamp(LocalDateTime.now());
 
-        String senderMessage = String.format("You have sent %s to %s %s", transaction.value(), receiver.getFirstName(), receiver.getLastName());
-        String receiverMessage = String.format("You have received %s from %s %s", transaction.value(), sender.getFirstName(), sender.getLastName());
+
 
 
 
