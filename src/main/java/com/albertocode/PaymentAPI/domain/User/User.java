@@ -2,10 +2,7 @@ package com.albertocode.PaymentAPI.domain.User;
 
 import com.albertocode.PaymentAPI.DTOS.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -14,6 +11,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
 
@@ -44,6 +42,7 @@ public class User {
         this.balance=data.balance();
         this.userType=data.userType();
         this.password=data.password();
+        this.document=data.document();
         this.email=data.email();
     }
 
